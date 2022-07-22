@@ -10,8 +10,7 @@ const additionButtonElement = document.querySelector("footer button");
 //entry list 
 const entryListElement = document.querySelector("section ul");
 
-/*
-console.log(balanceElement);
+/*console.log(balanceElement);
 console.log(valueInputElement);
 console.log(selectElement);
 console.log(additionButtonElement);
@@ -69,3 +68,5 @@ additionButtonElement.onclick = function () {
   valueInputElement.value = "";
   updateBalance();
 };  
+/* BUG: #1 => round the thing to 2 digits.  */
+/* ToDo IDEA: add description input field */
