@@ -87,11 +87,12 @@ additionButtonElement.onclick = function () {
   const amount = valueInputElement.value;
   const operation = selectElement.value;
   //console.log(amount, operation);
-
+  if (amount != "") {
   addEntry(amount, operation);
   valueInputElement.value = "";
   updateBalance();
-  console.log(textInputElement.value);
+  }
+  //console.log(textInputElement.value);
 };  
 /* BUG: #1 => round the thing to 2 digits.  */
 /* forbid adding empty values */  
