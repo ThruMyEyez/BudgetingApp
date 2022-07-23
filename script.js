@@ -42,6 +42,7 @@ function addEntry (amount, operation) {
 }
 function updateBalance() {
   let total = 0;
+  let emotionalBalance;
   console.log(entryListElement.children); 
   for(let item of entryListElement.children) {
   const valueElement = item.querySelector("strong");
@@ -55,7 +56,28 @@ function updateBalance() {
       total = total - value;
     }
   }
-  balanceElement.innerText = total + "$";
+  /* easterEgg  */
+  if (total < -50) {
+    emotionalBalance = "😢";
+  } else if (total >= -50 && total < 0) {
+    emotionalBalance = "☹";
+  } else if (total >= 0 && total <= 21) {
+    emotionalBalance = "😕";
+  } else if (total > 21 && total <= 50) {
+    emotionalBalance = "😐";
+  } else if (total > 50 && total <= 100) {
+    emotionalBalance = "🧐";
+  } else if (total > 100 && total <= 500) {
+    emotionalBalance = "🙂";
+  } else if (total > 500 && total <= 2000) {
+    emotionalBalance = "😄";
+  } else if (total > 2000 && total <= 10000) {
+    emotionalBalance = "😝"; 
+  } else if (total > 10000) {
+    emotionalBalance = "🤑";
+  }
+
+  balanceElement.innerText = total + `$ ${emotionalBalance}`;
 }
 
 additionButtonElement.onclick = function () {
