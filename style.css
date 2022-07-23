@@ -4,7 +4,9 @@
 
 html,
 body {
+  margin: 0 auto;
   height: 100%;
+  width: auto;
 }
 
 body {
@@ -38,6 +40,12 @@ header {
 header span {
   font-size: 1.5em;
 }
+.copyleft-span {
+  font-size: 1em;
+  position: absolute;
+  right: 2em;
+}
+
 .copyleft {
   display: inline-block;
   transform: rotate(180deg);
@@ -52,11 +60,6 @@ transition: 0.5s;
 }
 .my-github:hover {
   --d: 100%;
-}
-.copyleft-span {
-  font-size: 1em;
-  position: absolute;
-  right: 2em;
 }
 
 section {
@@ -99,6 +102,13 @@ button {
   -webkit-appearance: none;
   background: none;
   border: 0;
+  font-weight: bold;
+}
+button {
+  cursor: pointer;
+}
+#input-number {
+  width: 21%;
 }
 
 section ul li {

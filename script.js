@@ -58,7 +58,7 @@ function updateBalance() {
       total = total - value;
     }
   }
-  /* easterEgg */
+  /* easterEgg ;) */
   if (total < -50) {
     emotionalBalance = "😢";
   } else if (total >= -50 && total < 0) {
@@ -90,10 +90,11 @@ additionButtonElement.onclick = function () {
   if (amount != "") {
   addEntry(amount, operation);
   valueInputElement.value = "";
+ // listEntryDescription.value = "";
   updateBalance();
   }
   //console.log(textInputElement.value);
 };  
-/* BUG: #1 => round the thing to 2 digits.  */
-/* forbid adding empty values */  
-/* ToDo IDEA: add description input field */
+/* BUG: #1 => round the thing to 2 digits. */
+
+/* ToDo Idea: client side storage */
