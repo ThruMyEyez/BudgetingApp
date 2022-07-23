@@ -1,14 +1,17 @@
  /*  What values to target? */
  // total balance
 const balanceElement = document.querySelector("#balance");
-//value input
-const valueInputElement = document.querySelector("input");
+//Numeric value input
+const valueInputElement = document.querySelector("#input-number");
 // income / expense
 const selectElement = document.querySelector("select");
 // addition button
 const additionButtonElement = document.querySelector("footer button");
 //entry list 
 const entryListElement = document.querySelector("section ul");
+// string input value  (description )
+const textInputElement = document.querySelector("#input-description");
+
 
 /*console.log(balanceElement);
 console.log(valueInputElement);
@@ -24,7 +27,7 @@ function addEntry (amount, operation) {
   listEntryValue.innerText = amount + "$";
 
   const listEntryDescription = document.createElement("em");
-  listEntryDescription.innerText = "Description";
+  listEntryDescription.innerText = textInputElement.value;
 
   const listEntryOperator = document.createElement("span");
 
@@ -37,17 +40,16 @@ function addEntry (amount, operation) {
   listEntry.appendChild(listEntryDescription);
   listEntry.appendChild(listEntryOperator);
   listEntry.appendChild(listEntryValue);
-
   entryListElement.appendChild(listEntry);
 }
+
 function updateBalance() {
   let total = 0;
   let emotionalBalance;
-  console.log(entryListElement.children); 
+  //console.log(entryListElement.children); 
   for(let item of entryListElement.children) {
   const valueElement = item.querySelector("strong");
   const operationElement = item.querySelector("span");
-
   const value = parseFloat(valueElement.innerText);
   const operation = operationElement.innerText;
     if ( operation === "+" ) {
@@ -56,7 +58,7 @@ function updateBalance() {
       total = total - value;
     }
   }
-  /* easterEgg  */
+  /* easterEgg */
   if (total < -50) {
     emotionalBalance = "😢";
   } else if (total >= -50 && total < 0) {
@@ -89,6 +91,8 @@ additionButtonElement.onclick = function () {
   addEntry(amount, operation);
   valueInputElement.value = "";
   updateBalance();
+  console.log(textInputElement.value);
 };  
 /* BUG: #1 => round the thing to 2 digits.  */
+/* forbid adding empty values */  
 /* ToDo IDEA: add description input field */
