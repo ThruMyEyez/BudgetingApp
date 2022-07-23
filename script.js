@@ -93,7 +93,6 @@ additionButtonElement.onclick = function () {
  // listEntryDescription.value = "";
   updateBalance();
   }
-  //console.log(textInputElement.value);
 };  
 /* BUG: #1 => round the thing to 2 digits. */
 
